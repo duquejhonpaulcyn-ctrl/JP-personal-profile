@@ -1,90 +1,324 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jhon Paul D. Duque - Personal Profile</title>
-</head>
-<body>
-    <header>
-        <h1>Welcome to My Personal Webpage</h1>
-        <p>Get to know me!</p>
-    </header>
+    <title>Jhon Paul D. Duque | Personal Profile</title>
 
-    <main>
-        <section>
-            <h2>About Me</h2>
-            <p><strong>Name:</strong> Jhon Paul D. Duque</p>
-            <p><strong>Course:</strong> BS Computer Science - Business Analytics</p>
-            <p><strong>Year Level:</strong> First Year</p>
-            <p>I am a first-year college student who enjoys learning new things, exploring technology, playing games, drawing, and watching.</p>
-        </section>
+    <style>
+        :root {
+            --navy: #17283f;
+            --blue: #456b91;
+            --light-blue: #dce8f2;
+            --cream: #f7f4ed;
+            --white: #ffffff;
+            --gold: #d6b879;
+            --text: #263548;
+            --muted: #6d7b8b;
+        }
 
-        <section>
-            <h2>My Profile Picture</h2>
-            <img src="profile.png" alt="Profile portrait of Jhon Paul D. Duque wearing glasses" width="200">
-        </section>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-        <section>
-            <h2>My Hobbies and Interests</h2>
-            <ul>
-                <li>Playing games</li>
-                <li>Learning about technology</li>
-                <li>Coding</li>
-                <li>Listening to music</li>
-                <li>Cats</li>
-            </ul>
-        </section>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
+        }
 
-        <section>
-            <h2>Educational Background</h2>
-            <table border="1">
-                <tr>
-                    <th>Level</th>
-                    <th>School</th>
-                    <th>Year</th>
-                </tr>
-                <tr>
-                    <td>Elementary</td>
-                    <td>Calaocan Elementary School</td>
-                    <td>2014-2020</td>
-                </tr>
-                <tr>
-                    <td>Junior High School</td>
-                    <td>Luis Fe Gomez Diamantina National High School</td>
-                    <td>2020-2024</td>
-                </tr>
-                <tr>
-                    <td>Senior High School</td>
-                    <td>San Mateo Vocational &amp; Industrial High School</td>
-                    <td>2024-2026</td>
-                </tr>
-                <tr>
-                    <td>College</td>
-                    <td>Isabela State University - Cauayan City Campus</td>
-                    <td>2026-Present</td>
-                </tr>
-            </table>
-        </section>
+        /* SCROLL PROGRESS */
+        #progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 0%;
+            background: var(--gold);
+            z-index: 1000;
+        }
 
-        <section>
-            <h2>My Personal Goals</h2>
-            <ol>
-                <li>Finish my college education.</li>
-                <li>Become a successful programmer.</li>
-                <li>Get a good job and support my family.</li>
-            </ol>
-        </section>
+        /* NAVIGATION */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: rgba(23, 40, 63, 0.96);
+            backdrop-filter: blur(10px);
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        }
 
-        <section>
-            <h2>Useful Websites</h2>
-            <p><a href="https://www.w3schools.com">W3Schools</a></p>
-            <p><a href="https://developer.mozilla.org">MDN Web Docs</a></p>
-        </section>
-    </main>
+        .logo {
+            color: var(--white);
+            font-weight: bold;
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
 
-    <footer>
-        <p>Created by Jhon Paul D. Duque - 2026</p>
-    </footer>
-</body>
-</html>
+        .logo span {
+            color: var(--gold);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #e8edf4;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 88vh;
+            background:
+                radial-gradient(circle at 85% 20%, rgba(214,184,121,0.16), transparent 25%),
+                linear-gradient(135deg, #17283f, #294968);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 70px 8%;
+            gap: 65px;
+            flex-wrap: wrap;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 570px;
+            animation: slideIn 1s ease;
+        }
+
+        .hero-content .tag {
+            display: inline-block;
+            color: var(--gold);
+            border: 1px solid rgba(214,184,121,0.6);
+            border-radius: 30px;
+            padding: 7px 17px;
+            font-size: 13px;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 65px);
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            color: #d7e0eb;
+            font-size: 17px;
+            max-width: 500px;
+            margin-bottom: 28px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background: var(--gold);
+            color: var(--navy);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            transform: translateY(-4px);
+            background: white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .profile-frame {
+            width: 280px;
+            height: 350px;
+            padding: 10px;
+            border: 2px solid var(--gold);
+            border-radius: 150px 150px 35px 35px;
+            position: relative;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .profile-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 145px 145px 28px 28px;
+            background: var(--light-blue);
+        }
+
+        .cat-decoration {
+            position: absolute;
+            right: -25px;
+            bottom: 30px;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 13px 17px;
+            border-radius: 20px;
+            font-size: 23px;
+        }
+
+        /* GENERAL SECTIONS */
+        section {
+            padding: 85px 8%;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-heading small {
+            color: var(--blue);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .section-heading h2 {
+            color: var(--navy);
+            font-size: 35px;
+            margin-top: 8px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            margin-top: 8px;
+        }
+
+        /* ABOUT */
+        .about {
+            background: var(--white);
+        }
+
+        .about-container {
+            max-width: 950px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 16px;
+            color: #526173;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .quote-card {
+            background: var(--navy);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            border-left: 5px solid var(--gold);
+        }
+
+        .quote-card .quote-mark {
+            color: var(--gold);
+            font-size: 40px;
+            line-height: 1;
+        }
+
+        .quote-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .quote-card p {
+            color: #d6e0ec;
+            font-size: 14px;
+        }
+
+        /* QUICK FACTS */
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            max-width: 950px;
+            margin: 35px auto 0;
+        }
+
+        .fact {
+            background: var(--cream);
+            padding: 20px;
+            text-align: center;
+            border-radius: 15px;
+            border: 1px solid #e7e2d8;
+        }
+
+        .fact strong {
+            display: block;
+            color: var(--navy);
+            font-size: 17px;
+        }
+
+        .fact span {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* HOBBIES */
+        .hobbies {
+            background: var(--light-blue);
+        }
+
+        .hobby-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .hobby-card {
+            background: white;
+            padding: 30px 22px;
+            border-radius: 18px;
+            text-align: center;
+            transition: 0.35s;
+            border-bottom: 4px solid transparent;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-9px);
+            border-bottom-color: var(--gold);
+            box-shadow: 0 12px 30px rgba(23,40,63,0.12);
+        }
+
+        .hobby-icon {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .hobby-card h3 {
+            color: var(--navy);
+            margin-bottom: 7px;
+        }
+
+        .hobby
