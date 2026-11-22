@@ -94,8 +94,8 @@ h1, h2, h3, p { margin-top: 0; }
 .gallery-heading p { margin: 0; color: var(--muted); }
 .cat-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 .cat-photo { position: relative; min-height: 250px; overflow: hidden; display: grid; place-items: center; border: 1px dashed var(--rose); border-radius: 22px; background: var(--surface); box-shadow: var(--shadow); }
-.cat-photo img { display: none; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.cat-photo img.ready { display: block; }
+.cat-photo img { display: block; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .25s ease; }
+.cat-photo img.ready { opacity: 1; }
 .cat-placeholder { display: grid; place-items: center; gap: .55rem; padding: 1.2rem; color: var(--muted); text-align: center; }
 .cat-placeholder span:first-child { font-size: 2rem; color: var(--rose-deep); }
 .cat-placeholder strong { color: var(--ink); }
@@ -173,9 +173,9 @@ body.dark .section-dark { background: #18141d; } body.dark .quote-panel { backgr
     </div>
     <div class="gallery-heading"><h3>My cats</h3><p>Add the matching image files beside <code>index.html</code>; they’ll appear here automatically.</p></div>
     <div class="cat-gallery" aria-label="Cat photo gallery">
-      <figure class="cat-photo"><img src="cat1.png" alt="Cat photo 1" loading="lazy"><figcaption class="cat-placeholder"><span aria-hidden="true">🐾</span><strong>cat1.png</strong><span>Photo slot 1</span></figcaption></figure>
-      <figure class="cat-photo"><img src="cat2.png" alt="Cat photo 2" loading="lazy"><figcaption class="cat-placeholder"><span aria-hidden="true">🐾</span><strong>cat2.png</strong><span>Photo slot 2</span></figcaption></figure>
-      <figure class="cat-photo"><img src="cat3.png" alt="Cat photo 3" loading="lazy"><figcaption class="cat-placeholder"><span aria-hidden="true">🐾</span><strong>cat3.png</strong><span>Photo slot 3</span></figcaption></figure>
+      <figure class="cat-photo"><img src="cat1.png" alt="Cat photo 1"><figcaption class="cat-placeholder"><span aria-hidden="true">🐾</span><strong>cat1.png</strong><span>Photo slot 1</span></figcaption></figure>
+      <figure class="cat-photo"><img src="cat2.png" alt="Cat photo 2"><figcaption class="cat-placeholder"><span aria-hidden="true">🐾</span><strong>cat2.png</strong><span>Photo slot 2</span></figcaption></figure>
+      <figure class="cat-photo"><img src="cat3.png" alt="Cat photo 3"><figcaption class="cat-placeholder"><span aria-hidden="true">🐾</span><strong>cat3.png</strong><span>Photo slot 3</span></figcaption></figure>
     </div>
   </div>
 </section>
