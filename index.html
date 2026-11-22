@@ -1,1022 +1,271 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jhon Paul D. Duque | Personal Profile</title>
-
+<meta name="theme-color" content="#fff8f0">
+<meta name="description" content="The personal profile of Jhon Paul D. Duque — computer science student, curious learner, and cat lover.">
+<title>Jhon Paul D. Duque | Paws, Code & Curiosity</title>
 <style>
 :root {
-    --navy: #17283f;
-    --blue: #456b91;
-    --light: #dce8f2;
-    --cream: #f7f4ed;
-    --gold: #d6b879;
-    --white: #ffffff;
-    --text: #263548;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background: var(--cream);
-    color: var(--text);
-    line-height: 1.7;
-    overflow-x: hidden;
-}
-
-/* NAVIGATION */
-nav {
-    background: var(--navy);
-    padding: 18px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 4px 15px #00000020;
-}
-
-.logo {
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.logo span {
-    color: var(--gold);
-}
-
-nav ul {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    transition: .3s;
-}
-
-nav a:hover {
-    color: var(--gold);
-}
-
-/* HERO SECTION */
-.hero {
-    min-height: 85vh;
-    background: linear-gradient(135deg, var(--navy), var(--blue));
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 65px;
-    padding: 70px 8%;
-    flex-wrap: wrap;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: "🐾";
-    position: absolute;
-    font-size: 150px;
-    opacity: .07;
-    top: 25px;
-    left: 5%;
-    transform: rotate(-25deg);
-}
-
-.hero::after {
-    content: "🐾";
-    position: absolute;
-    font-size: 180px;
-    opacity: .07;
-    bottom: 5px;
-    right: 5%;
-    transform: rotate(20deg);
-}
-
-.hero-text {
-    max-width: 550px;
-    animation: fadeIn 1s ease;
-    z-index: 1;
-}
-
-.tag {
-    color: var(--gold);
-    border: 1px solid var(--gold);
-    border-radius: 30px;
-    padding: 7px 16px;
-    display: inline-block;
-    margin-bottom: 20px;
-    font-size: 13px;
-}
-
-.hero h1 {
-    font-size: clamp(38px, 6vw, 62px);
-    line-height: 1.15;
-    margin-bottom: 18px;
-}
-
-.hero h1 span {
-    color: var(--gold);
-}
-
-.hero p {
-    color: var(--light);
-    margin-bottom: 25px;
-}
-
-.btn {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--navy);
-    padding: 12px 24px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: .3s;
-}
-
-.btn:hover {
-    background: white;
-    transform: translateY(-4px);
-}
-
-.hero-cat {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 20px;
-    color: var(--cream);
-    font-size: 13px;
-}
-
-.hero-cat span:first-child {
-    font-size: 30px;
-    animation: catBounce 2s infinite;
-}
-
-.photo {
-    width: 260px;
-    height: 330px;
-    padding: 8px;
-    border: 3px solid var(--gold);
-    border-radius: 140px 140px 25px 25px;
-    position: relative;
-    animation: float 4s ease-in-out infinite;
-    z-index: 1;
-    background: #ffffff20;
-}
-
-.photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: inherit;
-}
-
-.cat {
-    position: absolute;
-    right: -28px;
-    bottom: 20px;
-    background: var(--gold);
-    color: var(--navy);
-    padding: 12px;
-    border: 3px solid var(--cream);
-    border-radius: 18px;
-    font-size: 30px;
-    box-shadow: 0 5px 15px #00000030;
-    animation: catBounce 2s infinite;
-}
-
-/* GENERAL SECTIONS */
-section {
-    padding: 75px 8%;
-    position: relative;
-}
-
-.heading {
-    text-align: center;
-    margin-bottom: 38px;
-}
-
-.heading small {
-    color: var(--blue);
-    letter-spacing: 3px;
-    font-weight: bold;
-}
-
-.heading h2 {
-    color: var(--navy);
-    font-size: 34px;
-}
-
-.heading p {
-    color: #718092;
-}
-
-/* PAW PRINT BACKGROUND */
-.about,
-.education,
-.resources {
-    background-color: var(--cream);
-    background-image:
-        radial-gradient(ellipse at 50% 65%, #456b9118 0 7px, transparent 8px),
-        radial-gradient(circle at 27% 35%, #456b9118 0 4px, transparent 5px),
-        radial-gradient(circle at 43% 20%, #456b9118 0 4px, transparent 5px),
-        radial-gradient(circle at 63% 20%, #456b9118 0 4px, transparent 5px),
-        radial-gradient(circle at 79% 35%, #456b9118 0 4px, transparent 5px);
-    background-size: 110px 110px;
-}
-
-/* ABOUT SECTION */
-.about-content {
-    max-width: 950px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1.2fr .8fr;
-    gap: 30px;
-    align-items: center;
-}
-
-.about-text {
-    color: #596879;
-}
-
-.about-text p {
-    margin-bottom: 15px;
-}
-
-.quote {
-    background: var(--navy);
-    color: white;
-    padding: 28px;
-    border-radius: 18px;
-    border-left: 5px solid var(--gold);
-    box-shadow: 0 8px 20px #17283f20;
-}
-
-.quote h3 {
-    color: var(--gold);
-    margin-bottom: 10px;
-}
-
-.quote .quote-cat {
-    font-size: 28px;
-    margin-top: 12px;
-}
-
-.facts {
-    max-width: 950px;
-    margin: 30px auto 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-}
-
-.fact {
-    background: white;
-    padding: 18px;
-    border-radius: 13px;
-    text-align: center;
-    border-bottom: 3px solid var(--gold);
-    transition: .3s;
-}
-
-.fact:hover {
-    transform: translateY(-5px);
-}
-
-.fact strong {
-    display: block;
-    color: var(--navy);
-}
-
-.fact span {
-    color: #718092;
-    font-size: 13px;
-}
-
-/* HOBBIES */
-.hobbies {
-    background: var(--light);
-}
-
-.grid {
-    max-width: 1000px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 18px;
-    text-align: center;
-    border-bottom: 4px solid transparent;
-    transition: .3s;
-    box-shadow: 0 5px 15px #17283f08;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    border-bottom-color: var(--gold);
-    box-shadow: 0 10px 25px #17283f20;
-}
-
-.icon {
-    font-size: 38px;
-    margin-bottom: 10px;
-}
-
-.card h3 {
-    color: var(--navy);
-    margin-bottom: 7px;
-}
-
-.card p {
-    color: #718092;
-    font-size: 14px;
-}
-
-/* CAT APPRECIATION CORNER */
-.cat-section {
-    background: var(--light);
-    overflow: hidden;
-}
-
-.cat-section::before {
-    content: "🐾";
-    position: absolute;
-    font-size: 100px;
-    opacity: .12;
-    top: 20px;
-    left: 5%;
-    transform: rotate(-25deg);
-}
-
-.cat-section::after {
-    content: "🐾";
-    position: absolute;
-    font-size: 110px;
-    opacity: .12;
-    bottom: 15px;
-    right: 5%;
-    transform: rotate(20deg);
-}
-
-.cat-feature {
-    max-width: 760px;
-    margin: auto;
-    background: white;
-    border: 2px dashed var(--gold);
-    border-radius: 25px;
-    padding: 35px;
-    text-align: center;
-    box-shadow: 0 10px 25px #17283f15;
-    transition: .3s;
-    position: relative;
-    z-index: 1;
-}
-
-.cat-feature:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 15px 30px #17283f20;
-}
-
-.big-cat {
-    font-size: 85px;
-    line-height: 1.4;
-    animation: catBounce 2.5s infinite;
-}
-
-.cat-feature h3 {
-    color: var(--navy);
-    font-size: 24px;
-    margin: 10px 0;
-}
-
-.cat-feature p {
-    max-width: 570px;
-    margin: auto;
-    color: #718092;
-}
-
-.cat-paws {
-    margin-top: 20px;
-    font-size: 28px;
-    letter-spacing: 8px;
-}
-
-/* EDUCATION TIMELINE */
-.timeline {
-    max-width: 800px;
-    margin: auto;
-    border-left: 3px solid var(--gold);
-    padding-left: 28px;
-}
-
-.school {
-    background: white;
-    padding: 20px;
-    border-radius: 13px;
-    margin-bottom: 22px;
-    box-shadow: 0 5px 15px #17283f10;
-    transition: .3s;
-    position: relative;
-}
-
-.school::before {
-    content: "🐾";
-    position: absolute;
-    left: -44px;
-    top: 20px;
-    font-size: 22px;
-    background: var(--cream);
-}
-
-.school:hover {
-    transform: translateX(6px);
-}
-
-.school h3 {
-    color: var(--navy);
-}
-
-.school p {
-    color: #718092;
-    font-size: 14px;
-}
-
-.school span {
-    color: var(--blue);
-    font-weight: bold;
-    font-size: 13px;
-}
-
-/* GOALS */
-.goals {
-    background: var(--navy);
-    color: white;
-}
-
-.goals .heading h2 {
-    color: white;
-}
-
-.goals .heading small {
-    color: var(--gold);
-}
-
-.goal-card {
-    background: #ffffff12;
-    border: 1px solid #ffffff25;
-    padding: 24px;
-    border-radius: 15px;
-    transition: .3s;
-}
-
-.goal-card:hover {
-    transform: translateY(-6px);
-    background: #d6b87925;
-}
-
-.goal-card h3 {
-    color: var(--gold);
-    margin: 8px 0;
-}
-
-.goal-card p {
-    color: var(--light);
-    font-size: 14px;
-}
-
-/* USEFUL WEBSITES */
-.resource-list {
-    max-width: 700px;
-    margin: auto;
-    display: grid;
-    gap: 15px;
-}
-
-.resource-list a {
-    display: flex;
-    justify-content: space-between;
-    background: white;
-    color: var(--navy);
-    padding: 18px 22px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: .3s;
-    border-left: 4px solid var(--gold);
-}
-
-.resource-list a:hover {
-    background: var(--light);
-    transform: translateX(5px);
-}
-
-/* PAW DIVIDER */
-.paw-divider {
-    text-align: center;
-    color: var(--gold);
-    font-size: 23px;
-    letter-spacing: 12px;
-    padding: 10px;
-}
-
-/* FOOTER */
-footer {
-    background: #101d2e;
-    color: var(--light);
-    text-align: center;
-    padding: 35px 15px;
-}
-
-footer span {
-    color: var(--gold);
-}
-
-.footer-cats {
-    font-size: 28px;
-    margin-top: 12px;
-    letter-spacing: 8px;
-}
-
-/* BACK TO TOP */
-.top {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    background: var(--gold);
-    color: var(--navy);
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 50%;
-    font-weight: bold;
-    box-shadow: 0 4px 12px #00000030;
-    transition: .3s;
-    z-index: 50;
-}
-
-.top:hover {
-    transform: translateY(-5px);
-    background: white;
-}
-
-/* ANIMATIONS */
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes catBounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-}
-
-/* MOBILE RESPONSIVENESS */
-@media (max-width: 700px) {
-    nav {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    nav ul {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    nav a {
-        font-size: 12px;
-    }
-
-    .hero {
-        text-align: center;
-        padding: 55px 6%;
-        gap: 35px;
-    }
-
-    .about-content {
-        grid-template-columns: 1fr;
-    }
-
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .facts {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 450px) {
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
-    section {
-        padding: 55px 6%;
-    }
-
-    .cat-feature {
-        padding: 25px 18px;
-    }
-
-    .big-cat {
-        font-size: 65px;
-    }
-}
+  color-scheme: light;
+  --ink: #302638;
+  --muted: #756b78;
+  --paper: #fff8f0;
+  --surface: #ffffff;
+  --rose: #d77b91;
+  --rose-deep: #a84d6a;
+  --lilac: #e9ddf2;
+  --peach: #ffe7d6;
+  --gold: #e9b85d;
+  --line: #f0e4dd;
+  --shadow: 0 18px 50px #50364d12;
+  --nav-height: 72px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-height) + 16px); }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: Inter, ui-rounded, "Segoe UI", system-ui, sans-serif; line-height: 1.65; overflow-x: hidden; }
+button, a { font: inherit; }
+a { color: inherit; }
+button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+.skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 300; padding: .7rem 1rem; border-radius: 999px; background: var(--ink); color: white; }
+.skip-link:focus { top: 1rem; }
+.site-nav { min-height: var(--nav-height); position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .8rem max(5vw, calc((100vw - 1160px)/2)); background: color-mix(in srgb, var(--paper) 91%, transparent); border-bottom: 1px solid var(--line); backdrop-filter: blur(14px); }
+.brand { text-decoration: none; font-weight: 900; font-size: 1.2rem; letter-spacing: -.04em; white-space: nowrap; }
+.brand span { color: var(--rose-deep); }
+.nav-links { display: flex; align-items: center; justify-content: center; gap: 1.3rem; list-style: none; margin: 0; padding: 0; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: .9rem; font-weight: 700; transition: color .2s; }
+.nav-links a:hover { color: var(--rose-deep); }
+.theme-toggle, .button { border: 0; border-radius: 999px; padding: .7rem 1rem; cursor: pointer; font-weight: 800; transition: transform .2s, background .2s, box-shadow .2s; }
+.theme-toggle { background: var(--lilac); color: var(--ink); white-space: nowrap; }
+.theme-toggle:hover, .button:hover { transform: translateY(-2px); }
+.hero { min-height: 610px; display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: clamp(2rem, 7vw, 6rem); max-width: 1160px; margin: auto; padding: 5.5rem 2rem 6rem; position: relative; }
+.hero::before, .hero::after { content: "✦"; position: absolute; color: var(--gold); opacity: .7; font-size: 2.4rem; pointer-events: none; }
+.hero::before { top: 14%; left: 3%; }.hero::after { bottom: 14%; right: 46%; font-size: 1.5rem; }
+.eyebrow { display: inline-flex; align-items: center; gap: .5rem; color: var(--rose-deep); background: var(--peach); border-radius: 999px; padding: .45rem .85rem; font-size: .78rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+h1, h2, h3, p { margin-top: 0; }
+.hero h1 { margin: 1.2rem 0 1rem; font-size: clamp(3rem, 7vw, 5.5rem); line-height: .99; letter-spacing: -.07em; }
+.hero h1 span { color: var(--rose-deep); }
+.hero-copy { max-width: 590px; color: var(--muted); font-size: 1.08rem; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem; margin-top: 1.7rem; }
+.button-primary { background: var(--rose-deep); color: white; box-shadow: 0 8px 22px #a84d6a30; text-decoration: none; }
+.button-soft { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
+.hero-note { display: flex; align-items: center; gap: .65rem; margin-top: 1.4rem; color: var(--muted); font-size: .9rem; }
+.hero-note span { font-size: 1.5rem; }
+.portrait-wrap { position: relative; justify-self: center; width: min(100%, 365px); }
+.portrait-frame { padding: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 48% 48% 32px 32px; box-shadow: var(--shadow); transform: rotate(2deg); }
+.portrait-frame img { display: block; width: 100%; height: 410px; object-fit: cover; border-radius: inherit; }
+.sticker { position: absolute; display: grid; place-items: center; width: 76px; height: 76px; border-radius: 23px; background: var(--gold); font-size: 2.4rem; box-shadow: var(--shadow); animation: bob 3s ease-in-out infinite; }
+.sticker-one { top: 8%; right: -9%; transform: rotate(10deg); }.sticker-two { bottom: 8%; left: -11%; background: var(--lilac); font-size: 1.8rem; transform: rotate(-9deg); }
+.section { padding: 5.5rem 2rem; }
+.section-inner { width: min(100%, 1000px); margin: auto; }
+.section-soft { background: var(--lilac); }
+.section-peach { background: var(--peach); }
+.section-dark { background: #302638; color: white; }
+.section-heading { max-width: 650px; margin: 0 auto 2.5rem; text-align: center; }
+.section-heading .eyebrow { margin-bottom: .8rem; }
+.section-heading h2 { margin-bottom: .55rem; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -.05em; }
+.section-heading p { margin: 0; color: var(--muted); }
+.section-dark .section-heading p { color: #d8cbd8; }
+.about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 1.25rem; align-items: stretch; }
+.panel { padding: 1.7rem; background: var(--surface); border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow); }
+.about-copy { color: var(--muted); }
+.about-copy p:last-child { margin-bottom: 0; }
+.quote-panel { display: flex; flex-direction: column; justify-content: center; background: var(--ink); color: white; border: 0; }
+.quote-panel h3 { color: #ffd08a; }
+.quote-panel p { margin-bottom: .5rem; font-size: 1.12rem; }
+.quote-paws { font-size: 1.6rem; }
+.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; margin-top: 1rem; }
+.fact { padding: 1rem; text-align: center; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; }
+.fact strong { display: block; color: var(--rose-deep); }.fact span { color: var(--muted); font-size: .83rem; }
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.card { padding: 1.45rem; background: var(--surface); border: 1px solid var(--line); border-radius: 22px; box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 22px 46px #50364d1c; }
+.card-icon { display: block; margin-bottom: .75rem; font-size: 2rem; }.card h3 { margin-bottom: .4rem; font-size: 1.08rem; }.card p { margin-bottom: 0; color: var(--muted); font-size: .92rem; }
+.cat-playground { display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; gap: 2rem; padding: clamp(1.5rem, 5vw, 3rem); background: var(--surface); border: 2px dashed var(--rose); border-radius: 30px; box-shadow: var(--shadow); }
+.cat-display { display: grid; place-items: center; min-height: 230px; border-radius: 24px; background: radial-gradient(circle at 50% 45%, var(--peach), transparent 70%), var(--paper); }
+.interactive-cat { border: 0; background: transparent; cursor: pointer; font-size: clamp(6rem, 14vw, 8rem); line-height: 1; transition: transform .2s; filter: drop-shadow(0 10px 8px #50364d18); }
+.interactive-cat:hover { transform: scale(1.08) rotate(-5deg); }.interactive-cat:active { transform: scale(.9); }
+.cat-controls h3 { font-size: 1.7rem; margin-bottom: .5rem; }.cat-controls p { color: var(--muted); }.cat-count { display: inline-block; margin: .3rem 0 1rem; padding: .45rem .8rem; border-radius: 999px; background: var(--peach); color: var(--rose-deep); font-weight: 900; }
+.cat-message { min-height: 1.7em; color: var(--rose-deep) !important; font-weight: 800; }
+.fact-box { margin-top: 1rem; padding: 1rem; background: var(--lilac); border-radius: 16px; color: var(--ink) !important; }
+.gallery-heading { margin: 3rem 0 1.2rem; text-align: center; }
+.gallery-heading h3 { margin-bottom: .25rem; font-size: 1.55rem; }
+.gallery-heading p { margin: 0; color: var(--muted); }
+.cat-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.cat-photo { position: relative; min-height: 250px; overflow: hidden; display: grid; place-items: center; border: 1px dashed var(--rose); border-radius: 22px; background: var(--surface); box-shadow: var(--shadow); }
+.cat-photo img { display: none; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.cat-photo img.ready { display: block; }
+.cat-placeholder { display: grid; place-items: center; gap: .55rem; padding: 1.2rem; color: var(--muted); text-align: center; }
+.cat-placeholder span:first-child { font-size: 2rem; color: var(--rose-deep); }
+.cat-placeholder strong { color: var(--ink); }
+.cat-photo.has-photo .cat-placeholder { display: none; }
+.timeline { position: relative; max-width: 760px; margin: auto; padding-left: 1.8rem; border-left: 3px solid var(--rose); }
+.school { position: relative; margin: 0 0 1rem; padding: 1.2rem 1.4rem; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); }
+.school::before { content: "🐾"; position: absolute; left: -2.7rem; top: 1rem; display: grid; place-items: center; width: 1.7rem; height: 1.7rem; background: var(--paper); border-radius: 50%; font-size: 1rem; }
+.school h3 { margin-bottom: .1rem; }.school p { color: var(--muted); margin-bottom: .3rem; }.school span { color: var(--rose-deep); font-size: .85rem; font-weight: 900; }
+.section-dark .card { background: #ffffff0c; border-color: #ffffff24; box-shadow: none; }.section-dark .card h3 { color: #ffd08a; }.section-dark .card p { color: #e0d7e1; }
+.resources { max-width: 700px; margin: auto; display: grid; gap: .8rem; }.resources a { display: flex; justify-content: space-between; padding: 1rem 1.2rem; background: var(--surface); border: 1px solid var(--line); border-radius: 15px; text-decoration: none; font-weight: 800; transition: transform .2s, color .2s; }.resources a:hover { transform: translateX(5px); color: var(--rose-deep); }
+footer { padding: 2.5rem 1rem; text-align: center; background: #241d2a; color: #e5dce7; } footer p { margin: .2rem; } footer strong { color: #ffd08a; }.footer-paws { margin-top: .6rem; letter-spacing: .7rem; font-size: 1.5rem; }
+.back-top { position: fixed; right: 1rem; bottom: 1rem; z-index: 50; display: grid; place-items: center; width: 48px; height: 48px; border: 0; border-radius: 50%; background: var(--rose-deep); color: white; text-decoration: none; font-size: 1.25rem; box-shadow: var(--shadow); }
+body.dark { color-scheme: dark; --ink: #f7eef7; --muted: #c6b8cb; --paper: #211b27; --surface: #302838; --rose: #e997ad; --rose-deep: #f0a2b8; --lilac: #382b42; --peach: #47303b; --gold: #f0c16f; --line: #493c4b; --shadow: 0 18px 50px #00000030; }
+body.dark .section-dark { background: #18141d; } body.dark .quote-panel { background: #17131b; } body.dark .cat-display { background: radial-gradient(circle at 50% 45%, #47303b, transparent 70%), var(--paper); } body.dark .fact-box { color: var(--ink) !important; }
+@keyframes bob { 0%,100% { translate: 0 0; } 50% { translate: 0 -8px; } }
+@media (max-width: 780px) {
+  .site-nav { flex-wrap: wrap; justify-content: center; padding-inline: 1rem; }.brand { margin-right: auto; }.nav-links { order: 3; width: 100%; gap: .85rem; flex-wrap: wrap; }.nav-links a { font-size: .82rem; }.hero { min-height: auto; grid-template-columns: 1fr; text-align: center; padding-top: 4rem; }.hero-copy { margin-inline: auto; }.hero-actions, .hero-note { justify-content: center; }.portrait-wrap { width: min(74vw, 330px); }.portrait-frame img { height: 360px; }.hero::after { right: 12%; bottom: 4%; }.about-grid, .cat-playground { grid-template-columns: 1fr; }.cat-display { min-height: 190px; }.cat-gallery { grid-template-columns: 1fr; }.cat-photo { min-height: 270px; }.card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .section { padding: 4rem 1.1rem; }.hero { padding-inline: 1.2rem; }.hero h1 { font-size: 3.2rem; }.facts { grid-template-columns: 1fr; }.card-grid { grid-template-columns: 1fr; }.theme-toggle { padding: .55rem .75rem; font-size: .85rem; }.portrait-frame img { height: 320px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
 </style>
 </head>
-
 <body id="top">
-
-<!-- NAVIGATION -->
-<nav>
-    <div class="logo">JP<span>.</span> 🐾</div>
-
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#hobbies">Hobbies</a></li>
-        <li><a href="#cat-corner">Cats</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#goals">Goals</a></li>
-    </ul>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="brand" href="#top">JP<span>.</span> <span aria-hidden="true">🐾</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li><li><a href="#hobbies">Hobbies</a></li><li><a href="#cats">Cat corner</a></li><li><a href="#education">Education</a></li><li><a href="#goals">Goals</a></li>
+  </ul>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false">🌙 Night mode</button>
 </nav>
-
-<!-- HERO -->
+<main id="main">
 <header class="hero">
-
-    <div class="hero-text">
-        <span class="tag">WELCOME TO MY PROFILE 🐾</span>
-
-        <h1>Hello, I'm <span>Jhon Paul!</span></h1>
-
-        <p>
-            A first-year Computer Science student who enjoys
-            learning new things, exploring technology, playing
-            games, drawing, and watching movies.
-        </p>
-
-        <a href="#about" class="btn">Discover More</a>
-
-        <div class="hero-cat">
-            <span>🐈</span>
-            <span>Welcome to my little corner of the internet!</span>
-        </div>
-    </div>
-
-    <div class="photo">
-        <img src="profile.png"
-             alt="Jhon Paul D. Duque wearing glasses">
-
-        <div class="cat">🐱</div>
-    </div>
-
+  <div>
+    <span class="eyebrow">A little corner of the internet <span aria-hidden="true">🐾</span></span>
+    <h1>Hello, I’m<br><span>Jhon Paul!</span></h1>
+    <p class="hero-copy">A first-year Computer Science student who enjoys learning new things, exploring technology, playing games, drawing, and watching movies. Currently collecting ideas, skills, and probably too many cat photos.</p>
+    <div class="hero-actions"><a class="button button-primary" href="#about">Get to know me <span aria-hidden="true">↘</span></a><a class="button button-soft" href="#cats">Meet the cat corner <span aria-hidden="true">🐈</span></a></div>
+    <div class="hero-note"><span aria-hidden="true">🐈</span><span>Curious mind. Cozy vibes. Cat-approved.</span></div>
+  </div>
+  <div class="portrait-wrap">
+    <div class="portrait-frame"><img src="profile.png" alt="Portrait of Jhon Paul D. Duque wearing glasses"></div>
+    <div class="sticker sticker-one" aria-hidden="true">🐱</div><div class="sticker sticker-two" aria-hidden="true">✦</div>
+  </div>
 </header>
-
-<div class="paw-divider">🐾　🐾　🐾</div>
-
-<!-- ABOUT ME -->
-<section class="about" id="about">
-
-    <div class="heading">
-        <small>GET TO KNOW ME</small>
-        <h2>About Me</h2>
-        <p>A little introduction about who I am.</p>
+<section class="section" id="about">
+  <div class="section-inner">
+    <div class="section-heading"><span class="eyebrow">Get to know me</span><h2>About me</h2><p>A little introduction, with a few paw prints along the way.</p></div>
+    <div class="about-grid">
+      <div class="panel about-copy"><p>Hello! My name is <strong>Jhon Paul D. Duque</strong>. I am currently a first-year Bachelor of Science in Computer Science major in Business Analytics student.</p><p>I enjoy exploring technology, learning programming, playing games, listening to music, and spending time on things that interest me. I also love cats!</p><p>As a student, I believe that every new experience is an opportunity to learn and improve myself.</p></div>
+      <aside class="panel quote-panel"><h3>A little reminder <span aria-hidden="true">🐾</span></h3><p>“Every expert was once a beginner. Keep learning, keep exploring, and never stop growing.”</p><div class="quote-paws" aria-hidden="true">🐈‍⬛ 🐾</div></aside>
     </div>
-
-    <div class="about-content">
-
-        <div class="about-text">
-            <p>
-                Hello! My name is
-                <strong>Jhon Paul D. Duque</strong>.
-                I am currently a first-year Bachelor of Science in
-                Computer Science major in Business Analytics student.
-            </p>
-
-            <p>
-                I enjoy exploring technology, learning programming,
-                playing games, listening to music, and spending time
-                on things that interest me. I also love cats!
-            </p>
-
-            <p>
-                As a student, I believe that every new experience
-                is an opportunity to learn and improve myself.
-            </p>
-        </div>
-
-        <div class="quote">
-            <h3>A Little Reminder 🐾</h3>
-
-            <p>
-                "Every expert was once a beginner.
-                Keep learning, keep exploring, and never stop growing."
-            </p>
-
-            <div class="quote-cat">🐈‍⬛</div>
-        </div>
-
-    </div>
-
-    <div class="facts">
-
-        <div class="fact">
-            <strong>BSCS - BA</strong>
-            <span>Course</span>
-        </div>
-
-        <div class="fact">
-            <strong>First Year</strong>
-            <span>Year Level</span>
-        </div>
-
-        <div class="fact">
-            <strong>ISU</strong>
-            <span>University</span>
-        </div>
-
-    </div>
-
+    <div class="facts"><div class="fact"><strong>BSCS – BA</strong><span>Course</span></div><div class="fact"><strong>First Year</strong><span>Year level</span></div><div class="fact"><strong>ISU</strong><span>University</span></div></div>
+  </div>
 </section>
-
-<!-- HOBBIES -->
-<section class="hobbies" id="hobbies">
-
-    <div class="heading">
-        <small>THINGS I ENJOY</small>
-        <h2>My Hobbies</h2>
-        <p>Some of the things I love doing in my free time.</p>
+<section class="section section-soft" id="hobbies">
+  <div class="section-inner"><div class="section-heading"><span class="eyebrow">Things I enjoy</span><h2>My hobbies</h2><p>My favorite ways to explore, create, and recharge.</p></div>
+    <div class="card-grid">
+      <article class="card"><span class="card-icon" aria-hidden="true">🎮</span><h3>Playing games</h3><p>Games are a fun way to relax and enjoy a little adventure.</p></article>
+      <article class="card"><span class="card-icon" aria-hidden="true">💻</span><h3>Technology</h3><p>I like exploring technology and discovering how things work.</p></article>
+      <article class="card"><span class="card-icon" aria-hidden="true">⌨️</span><h3>Coding</h3><p>I enjoy learning programming and improving my skills one step at a time.</p></article>
+      <article class="card"><span class="card-icon" aria-hidden="true">🎧</span><h3>Listening to music</h3><p>Music helps me relax and enjoy my free time.</p></article>
+      <article class="card"><span class="card-icon" aria-hidden="true">🐈</span><h3>Cats</h3><p>I love cats and all their adorable, curious personalities.</p></article>
+      <article class="card"><span class="card-icon" aria-hidden="true">🎨</span><h3>Drawing</h3><p>I enjoy expressing creativity through drawing.</p></article>
     </div>
-
-    <div class="grid">
-
-        <div class="card">
-            <div class="icon">🎮</div>
-            <h3>Playing Games</h3>
-            <p>
-                I enjoy playing games for entertainment
-                and relaxation.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">💻</div>
-            <h3>Technology</h3>
-            <p>
-                I like exploring technology and
-                discovering new things.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">⌨️</div>
-            <h3>Coding</h3>
-            <p>
-                I enjoy learning programming
-                and improving my skills.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🎧</div>
-            <h3>Listening to Music</h3>
-            <p>
-                Music helps me relax and enjoy
-                my free time.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🐈</div>
-            <h3>Cats</h3>
-            <p>
-                I love cats and their adorable
-                personalities.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🎨</div>
-            <h3>Drawing</h3>
-            <p>
-                I enjoy expressing creativity
-                through drawing.
-            </p>
-        </div>
-
-    </div>
-
+  </div>
 </section>
-
-<!-- CAT APPRECIATION CORNER -->
-<section class="cat-section" id="cat-corner">
-
-    <div class="heading">
-        <small>A LITTLE EXTRA ABOUT ME</small>
-        <h2>Cat Appreciation Corner</h2>
-        <p>Because every personal website deserves a little cat energy.</p>
+<section class="section section-peach" id="cats">
+  <div class="section-inner"><div class="section-heading"><span class="eyebrow">A tiny interactive break</span><h2>Cat appreciation corner</h2><p>Give the cat a little tap. It’s very good at accepting compliments.</p></div>
+    <div class="cat-playground">
+      <div class="cat-display"><button class="interactive-cat" id="petCat" type="button" aria-label="Pet the cat">🐈‍⬛</button></div>
+      <div class="cat-controls"><h3>Meet Mochi the mood cat</h3><p>Mochi is here to supervise your scrolling. Click the cat for a virtual head-scratch, or ask for a cat fact.</p><div class="cat-count" id="petCount">Pets: 0</div><p class="cat-message" id="catMessage" aria-live="polite">Mochi is patiently waiting for a head-scratch.</p><button class="button button-primary" id="factButton" type="button">Tell me a cat fact <span aria-hidden="true">✦</span></button><p class="fact-box" id="catFact" aria-live="polite">Your cat fact will appear here.</p></div>
     </div>
-
-    <div class="cat-feature">
-
-        <div class="big-cat">🐈‍⬛</div>
-
-        <h3>Certified Cat Lover</h3>
-
-        <p>
-            Cats are adorable, entertaining, and full of personality.
-            I love their curious nature and the little things that make
-            each cat unique. This corner is dedicated to my favorite
-            furry friends!
-        </p>
-
-        <div class="cat-paws">
-            🐾 🐱 🐾
-        </div>
-
+    <div class="gallery-heading"><h3>My cats</h3><p>Add the matching image files beside <code>index.html</code>; they’ll appear here automatically.</p></div>
+    <div class="cat-gallery" aria-label="Cat photo gallery">
+      <figure class="cat-photo"><img src="cat1.png" alt="Cat photo 1" loading="lazy"><figcaption class="cat-placeholder"><span aria-hidden="true">🐾</span><strong>cat1.png</strong><span>Photo slot 1</span></figcaption></figure>
+      <figure class="cat-photo"><img src="cat2.png" alt="Cat photo 2" loading="lazy"><figcaption class="cat-placeholder"><span aria-hidden="true">🐾</span><strong>cat2.png</strong><span>Photo slot 2</span></figcaption></figure>
+      <figure class="cat-photo"><img src="cat3.png" alt="Cat photo 3" loading="lazy"><figcaption class="cat-placeholder"><span aria-hidden="true">🐾</span><strong>cat3.png</strong><span>Photo slot 3</span></figcaption></figure>
     </div>
-
+  </div>
 </section>
-
-<!-- EDUCATION -->
-<section class="education" id="education">
-
-    <div class="heading">
-        <small>MY ACADEMIC JOURNEY</small>
-        <h2>Education</h2>
-        <p>The schools that have been part of my journey.</p>
-    </div>
-
+<section class="section" id="education">
+  <div class="section-inner"><div class="section-heading"><span class="eyebrow">My academic journey</span><h2>Education</h2><p>The schools that have been part of my journey.</p></div>
     <div class="timeline">
-
-        <div class="school">
-            <h3>Elementary School</h3>
-            <p>Calaocan Elementary School</p>
-            <span>2014 – 2020</span>
-        </div>
-
-        <div class="school">
-            <h3>Junior High School</h3>
-            <p>Luis Fe Gomez Diamantina National High School</p>
-            <span>2020 – 2024</span>
-        </div>
-
-        <div class="school">
-            <h3>Senior High School</h3>
-            <p>San Mateo Vocational & Industrial High School</p>
-            <span>2024 – 2026</span>
-        </div>
-
-        <div class="school">
-            <h3>College</h3>
-            <p>Isabela State University - Cauayan City Campus</p>
-            <span>2026 – Present</span>
-        </div>
-
+      <article class="school"><h3>Elementary school</h3><p>Calaocan Elementary School</p><span>2014 – 2020</span></article>
+      <article class="school"><h3>Junior high school</h3><p>Luis Fe Gomez Diamantina National High School</p><span>2020 – 2024</span></article>
+      <article class="school"><h3>Senior high school</h3><p>San Mateo Vocational &amp; Industrial High School</p><span>2024 – 2026</span></article>
+      <article class="school"><h3>College</h3><p>Isabela State University – Cauayan City Campus</p><span>2026 – Present</span></article>
     </div>
-
+  </div>
 </section>
-
-<!-- FUTURE GOALS -->
-<section class="goals" id="goals">
-
-    <div class="heading">
-        <small>LOOKING AHEAD</small>
-        <h2>My Future Goals</h2>
-        <p>Things I hope to achieve in the future.</p>
+<section class="section section-dark" id="goals">
+  <div class="section-inner"><div class="section-heading"><span class="eyebrow">Looking ahead</span><h2>My future goals</h2><p>Big dreams, one little step at a time.</p></div>
+    <div class="card-grid">
+      <article class="card"><span class="card-icon" aria-hidden="true">🎓</span><h3>Graduate</h3><p>Finish college and successfully earn my degree.</p></article>
+      <article class="card"><span class="card-icon" aria-hidden="true">💻</span><h3>Become a programmer</h3><p>Build my skills and become a successful programmer.</p></article>
+      <article class="card"><span class="card-icon" aria-hidden="true">💼</span><h3>Get a good job</h3><p>Find a stable job where I can grow professionally.</p></article>
+      <article class="card"><span class="card-icon" aria-hidden="true">🏡</span><h3>Support my family</h3><p>Give back to my family and help them financially.</p></article>
+      <article class="card"><span class="card-icon" aria-hidden="true">✈️</span><h3>Travel the world</h3><p>Explore different places and experience new cultures.</p></article>
+      <article class="card"><span class="card-icon" aria-hidden="true">🌍</span><h3>Work abroad</h3><p>Build a good career and experience working overseas.</p></article>
     </div>
-
-    <div class="grid">
-
-        <div class="goal-card">
-            <div class="icon">🎓</div>
-            <h3>Graduate</h3>
-            <p>
-                Finish college and successfully
-                earn my degree.
-            </p>
-        </div>
-
-        <div class="goal-card">
-            <div class="icon">💻</div>
-            <h3>Become a Programmer</h3>
-            <p>
-                Build my skills and become
-                a successful programmer.
-            </p>
-        </div>
-
-        <div class="goal-card">
-            <div class="icon">💼</div>
-            <h3>Get a Good Job</h3>
-            <p>
-                Find a stable job where
-                I can grow professionally.
-            </p>
-        </div>
-
-        <div class="goal-card">
-            <div class="icon">🏡</div>
-            <h3>Support My Family</h3>
-            <p>
-                Give back to my family
-                and help them financially.
-            </p>
-        </div>
-
-        <div class="goal-card">
-            <div class="icon">✈️</div>
-            <h3>Travel the World</h3>
-            <p>
-                Explore different places
-                and experience new cultures.
-            </p>
-        </div>
-
-        <div class="goal-card">
-            <div class="icon">🌍</div>
-            <h3>Work Abroad</h3>
-            <p>
-                Build a good career and experience
-                working overseas.
-            </p>
-        </div>
-
-    </div>
-
+  </div>
 </section>
-
-<!-- USEFUL WEBSITES -->
-<section class="resources" id="resources">
-
-    <div class="heading">
-        <small>MY LEARNING CORNER</small>
-        <h2>Useful Websites</h2>
-        <p>Some websites that help me learn about technology.</p>
-    </div>
-
-    <div class="resource-list">
-
-        <a href="https://www.w3schools.com/" target="_blank">
-            W3Schools <span>↗</span>
-        </a>
-
-        <a href="https://developer.mozilla.org/" target="_blank">
-            MDN Web Docs <span>↗</span>
-        </a>
-
-    </div>
-
+<section class="section" id="resources">
+  <div class="section-inner"><div class="section-heading"><span class="eyebrow">My learning corner</span><h2>Useful websites</h2><p>Some websites that help me learn about technology.</p></div>
+    <div class="resources"><a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer">W3Schools <span aria-hidden="true">↗</span></a><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs <span aria-hidden="true">↗</span></a></div>
+  </div>
 </section>
+</main>
+<footer><p>Made with <strong>♥</strong> by Jhon Paul D. Duque</p><p>© <span id="year">2026</span> · Personal profile</p><p>Stay curious. Keep learning. :3</p><div class="footer-paws" aria-hidden="true">🐾 🐈 🐾</div></footer>
+<a href="#top" class="back-top" aria-label="Back to top">↑</a>
+<script>
+(() => {
+  const body = document.body;
+  const themeToggle = document.getElementById('themeToggle');
+  const storedTheme = localStorage.getItem('jp-profile-theme');
+  if (storedTheme === 'dark') body.classList.add('dark');
+  const updateThemeButton = () => {
+    const isDark = body.classList.contains('dark');
+    themeToggle.textContent = isDark ? '☀️ Day mode' : '🌙 Night mode';
+    themeToggle.setAttribute('aria-pressed', String(isDark));
+  };
+  updateThemeButton();
+  themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    const theme = body.classList.contains('dark') ? 'dark' : 'light';
+    localStorage.setItem('jp-profile-theme', theme);
+    updateThemeButton();
+  });
 
-<!-- FOOTER -->
-<footer>
+  let pets = 0;
+  const petButton = document.getElementById('petCat');
+  const petCount = document.getElementById('petCount');
+  const catMessage = document.getElementById('catMessage');
+  const petMessages = ['Purrfect. Mochi says thanks!', 'Mochi’s purr motor is warming up.', 'You have been promoted to honorary cat butler.', 'Mochi approves of your excellent taste.', 'One more scratch? Mochi won’t say no.'];
+  petButton.addEventListener('click', () => {
+    pets += 1;
+    petCount.textContent = `Pets: ${pets}`;
+    catMessage.textContent = petMessages[(pets - 1) % petMessages.length];
+    petButton.textContent = pets % 2 ? '😸' : '🐈‍⬛';
+  });
 
-    <p>Made with <span>♥</span> by Jhon Paul D. Duque</p>
-
-    <p>© 2026 | Personal Profile</p>
-
-    <p>Stay curious. Keep learning. :3</p>
-
-    <div class="footer-cats">
-        🐾 🐈 🐾
-    </div>
-
-</footer>
-
-<!-- BACK TO TOP -->
-<a href="#top" class="top">↑</a>
-
+  const facts = [
+    'Cats use their whiskers to sense whether spaces are wide enough to squeeze through.',
+    'A group of kittens is often called a “kindle.”',
+    'Cats can rotate their ears independently to help locate sounds.',
+    'A cat’s nose print is unique, a little like a human fingerprint.',
+    'Many cats make a special greeting trill when they are happy to see someone.'
+  ];
+  let lastFact = -1;
+  document.getElementById('factButton').addEventListener('click', () => {
+    let next = Math.floor(Math.random() * facts.length);
+    if (facts.length > 1 && next === lastFact) next = (next + 1) % facts.length;
+    lastFact = next;
+    document.getElementById('catFact').textContent = facts[next];
+  });
+  document.querySelectorAll('.cat-photo img').forEach((img) => {
+    const showPhoto = () => {
+      if (img.naturalWidth > 0) {
+        img.classList.add('ready');
+        img.closest('.cat-photo').classList.add('has-photo');
+      }
+    };
+    img.addEventListener('load', showPhoto);
+    if (img.complete) showPhoto();
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
 </body>
 </html>
